@@ -2,7 +2,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Product from '../Product/Product';
+import Product from '../../Shared/Product/Product';
 
 const Products = () => {
 

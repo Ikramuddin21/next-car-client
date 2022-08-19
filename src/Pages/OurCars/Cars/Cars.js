@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, Container } from '@mui/system';
 import { Grid, Typography } from '@mui/material';
-import Product from '../../Home/Product/Product';
+import Product from '../../Shared/Product/Product';
 
 const Cars = () => {
 

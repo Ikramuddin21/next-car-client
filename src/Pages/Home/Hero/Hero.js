@@ -1,6 +1,7 @@
 import { Button, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import heroBanner from '../../../images/hero-banner.jpg';
 import heroCar from '../../../images/hero-car2.png';
 
@@ -41,12 +42,14 @@ const Hero = () => {
                                 }}>
                                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa dignissimos possimus aliquid. Rerum, libero veritatis id officiis dolores, ratione repellendus, inventore numquam rem fugit aperiam consequatur suscipit atque non libero.
                             </Typography>
-                            <Button
-                                variant='contained'
-                                sx={{ px: 4 }}
-                            >
-                                All Cars
-                            </Button>
+                            <Link to='/cars'>
+                                <Button
+                                    variant='contained'
+                                    sx={{ px: 4 }}
+                                >
+                                    All Cars
+                                </Button>
+                            </Link>
                         </Box>
                     </Grid>
                     <Grid item xs={12} md={6}>
