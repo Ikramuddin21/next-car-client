@@ -5,11 +5,11 @@ import React from 'react';
 const Testimonial = ({ review }) => {
     const { name, address, description, img } = review;
     return (
-        <Paper elevation={0} style={{ padding: '15px', border: '1px solid gray' }}>
-            <Typography variant='body1'>
+        <Paper elevation={0} sx={{ padding: '15px', background: '#d3d3d3cc', transition: '0.5s', '&:hover': {background: '#0D353A', color: 'lightgray'} }}>
+            <Typography variant='body1' textAlign={{xs: 'center', sm: 'left'}}>
                 {description}
             </Typography>
-            <Box sx={{display: 'flex', alignItems:'center', mt: 3, ml: 2}}>
+            <Box sx={{display: 'flex', alignItems:'center', mt: 3, ml: 2}} flexDirection={{xs: 'column', sm: 'unset'}}>
                 <Avatar
                     alt="Remy Sharp"
                     src={img}

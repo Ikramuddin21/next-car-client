@@ -85,34 +85,34 @@ const Header = () => {
                         <Link to='/'>
                             <img style={{ width: 65 }} src='https://i.ibb.co/NYgZQtS/logo.png' alt='' />
                         </Link>
-                        <Link to='/home'>
+                        <Link to='/home' style={{marginLeft: '16px'}}>
                             <Button
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, ml: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 Home
                             </Button>
                         </Link>
-                        <Link to='/cars'>
+                        <Link to='/cars' style={{marginLeft: '16px'}}>
                             <Button
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, ml: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 Our Cars
                             </Button>
                         </Link>
-                        <Link to='/about'>
+                        <Link to='/about' style={{marginLeft: '16px'}}>
                             <Button
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, ml: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 About
                             </Button>
                         </Link>
-                        <Link to='/dashboard'>
+                        <Link to='/dashboard' style={{marginLeft: '16px'}}>
                             <Button
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, ml: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 Dashboard
                             </Button>
@@ -121,7 +121,9 @@ const Header = () => {
 
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
                         <Typography marginRight={{ xs: 2, md: 3 }}>User Name</Typography>
-                        <Button variant='contained'>Login</Button>
+                        <Link to='/login'>
+                            <Button variant='contained'>Login</Button>
+                        </Link>
                     </Box>
                 </Toolbar>
             </Container>

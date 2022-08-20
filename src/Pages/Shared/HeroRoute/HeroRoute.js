@@ -16,7 +16,7 @@ const HeroRoute = ({ heading }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: 550
+        height: 500
     };
     return (
         <Box style={heroRouteBgStyle}>

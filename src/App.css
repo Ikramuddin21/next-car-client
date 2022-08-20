@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #f5faff;
+}
+
 a {
     text-decoration: none;
 }
