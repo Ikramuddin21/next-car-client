@@ -10,9 +10,11 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const {user, logout} = useAuth();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -85,7 +87,7 @@ const Header = () => {
                         <Link to='/'>
                             <img style={{ width: 65 }} src='https://i.ibb.co/NYgZQtS/logo.png' alt='' />
                         </Link>
-                        <Link to='/home' style={{marginLeft: '16px'}}>
+                        <Link to='/home' style={{ marginLeft: '16px' }}>
                             <Button
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -93,7 +95,7 @@ const Header = () => {
                                 Home
                             </Button>
                         </Link>
-                        <Link to='/cars' style={{marginLeft: '16px'}}>
+                        <Link to='/cars' style={{ marginLeft: '16px' }}>
                             <Button
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -101,7 +103,7 @@ const Header = () => {
                                 Our Cars
                             </Button>
                         </Link>
-                        <Link to='/about' style={{marginLeft: '16px'}}>
+                        <Link to='/about' style={{ marginLeft: '16px' }}>
                             <Button
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -109,7 +111,7 @@ const Header = () => {
                                 About
                             </Button>
                         </Link>
-                        <Link to='/dashboard' style={{marginLeft: '16px'}}>
+                        <Link to='/dashboard' style={{ marginLeft: '16px' }}>
                             <Button
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -120,10 +122,13 @@ const Header = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-                        <Typography marginRight={{ xs: 2, md: 3 }}>User Name</Typography>
-                        <Link to='/login'>
-                            <Button variant='contained'>Login</Button>
-                        </Link>
+                        {user?.email && <Typography variant="body1" marginRight={{ xs: 2, md: 3 }}>{user.displayName}</Typography>}
+                        {
+                            user?.email ? <Button onClick={logout} variant='contained'>Logout</Button> :
+                                <Link to='/login'>
+                                    <Button variant='contained'>Login</Button>
+                                </Link>
+                        }
                     </Box>
                 </Toolbar>
             </Container>
