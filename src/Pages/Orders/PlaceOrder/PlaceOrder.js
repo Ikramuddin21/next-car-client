@@ -22,7 +22,7 @@ const PlaceOrder = () => {
     }, [id]);
 
     // handle on change
-    const handleOnChange = e => {
+    const handleOnBlur = e => {
         const name = e.target.name;
         const value = e.target.value;
         const newUser = { ...userInfo };
@@ -60,7 +60,7 @@ const PlaceOrder = () => {
                                     sx={{ width: "50%" }}
                                     id="standard-basic"
                                     name="userName"
-                                    onChange={handleOnChange}
+                                    onBlur={handleOnBlur}
                                     defaultValue={user.displayName || ""}
                                     variant="standard"
                                 />
@@ -68,7 +68,7 @@ const PlaceOrder = () => {
                                     sx={{ width: "50%", mt: 3 }}
                                     id="standard-basic"
                                     name="email"
-                                    onChange={handleOnChange}
+                                    onBlur={handleOnBlur}
                                     defaultValue={user.email || ""}
                                     variant="standard"
                                 />
@@ -77,7 +77,7 @@ const PlaceOrder = () => {
                                     id="standard-basic"
                                     name="address"
                                     placeholder="Address"
-                                    onChange={handleOnChange}
+                                    onBlur={handleOnBlur}
                                     variant="standard"
                                 />
                                 <Button type="submit" variant="contained">Order Place</Button>

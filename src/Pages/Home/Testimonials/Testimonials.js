@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Testimonial from '../Testimonial/Testimonial';
-import { Typography } from '@mui/material';
+import { Box, CircularProgress, Typography } from '@mui/material';
 
 const Testimonials = () => {
 
@@ -36,8 +36,7 @@ const Testimonials = () => {
                 breakpoint: 650,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
-                    // initialSlide: 2
+                    slidesToScroll: 1
                 }
             },
             {
@@ -58,14 +57,19 @@ const Testimonials = () => {
             >
                 Testimonials
             </Typography>
-            <Slider {...settings}>
-                {
-                    reviews.map(review => <Testimonial
-                        key={review._id}
-                        review={review}
-                    />)
-                }
-            </Slider>
+            {
+
+                !reviews.length ? <Box sx={{ display: 'flex', justifyContent: 'center', mt: 5 }}>
+                    <CircularProgress />
+                </Box> :
+                    <Slider {...settings}>
+                        {
+                            reviews.map(review => <Testimonial
+                                key={review._id}
+                                review={review}
+                            />)
+                        }
+                    </Slider>}
         </Container>
     );
 };

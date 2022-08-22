@@ -21,7 +21,7 @@ const drawerWidth = 200;
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const { logout } = useAuth();
+    const { user, admin, logout } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -35,36 +35,76 @@ function Dashboard(props) {
                 </Link>
             </Toolbar>
             <Divider />
-            <List>
-                <Link to="my-orders" style={{ color: "black" }}>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemText sx={{ pl: 1 }}>My Orders</ListItemText>
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-                <Link to="review" style={{ color: "black" }}>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemText sx={{ pl: 1 }}>Review</ListItemText>
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-                <Link to="pay" style={{ color: "black" }}>
-                    <ListItem disablePadding>
-                        <ListItemButton>
-                            <ListItemText sx={{ pl: 1 }}>Pay</ListItemText>
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-                <Link to="/login" style={{ color: "black" }}>
-                    <ListItem disablePadding onClick={logout}>
-                        <ListItemButton>
-                            <ListItemText sx={{ pl: 1 }}>Logout</ListItemText>
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-            </List>
+            {
+                user?.email && admin ? <List>
+                    <Link to="my-orders" style={{ color: "black" }}>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>My Orders</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    <Link to="review" style={{ color: "black" }}>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Review</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    <Link to="pay" style={{ color: "black" }}>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Pay</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    <Link to="/login" style={{ color: "black" }}>
+                        <ListItem disablePadding onClick={logout}>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Logout</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                </List>
+                    :
+                <List>
+                    <Link to="" style={{ color: "black" }}>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Manage All Orders</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    <Link to="" style={{ color: "black" }}>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Add a Product</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    <Link to="make-admin" style={{ color: "black" }}>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Make Admin</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    <Link to="" style={{ color: "black" }}>
+                        <ListItem disablePadding>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Manage Products</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    <Link to="/login" style={{ color: "black" }}>
+                        <ListItem disablePadding onClick={logout}>
+                            <ListItemButton>
+                                <ListItemText sx={{ pl: 1 }}>Logout</ListItemText>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                </List>
+            }
         </div>
     );
 
@@ -91,7 +131,7 @@ function Dashboard(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Dashboard
+                        Dashboard <span style={{ color: "#BEE554", fontWeight: 600 }}>{user.displayName}</span>
                     </Typography>
                 </Toolbar>
             </AppBar>

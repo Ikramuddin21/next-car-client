@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 import Pay from './Pages/Dashboard/Pay/Pay';
 import Review from './Pages/Dashboard/Review/Review';
@@ -26,6 +27,7 @@ function App() {
             <Route path='my-orders' element={<MyOrders />} />
             <Route path='review' element={<Review />} />
             <Route path='pay' element={<Pay />} />
+            <Route path='make-admin' element={<MakeAdmin />} />
           </Route>
         </Route>
         <Route path='/login' element={<Login />} />

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Pages/Login/Firebase/firebase.init";
@@ -7,6 +8,7 @@ initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [error, setError] = useState("");
+    const [admin, setAdmin] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const auth = getAuth();
 
@@ -85,6 +87,11 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, []);
 
+    useEffect(() => {
+        axios.get(`http://localhost:5000/users/${user.email}`)
+        .then(res => setAdmin(res.data.admin));
+    }, []);
+
     const saveUser = (email, name, method) => {
         const user = { email: email, displayName: name };
         fetch("http://localhost:5000/users", {
@@ -109,6 +116,7 @@ const useFirebase = () => {
 
     return {
         user,
+        admin,
         error,
         isLoading,
         signInUsingGoogle,

@@ -37,7 +37,10 @@ const Login = () => {
                 <img style={{ width: 100 }} src='https://i.ibb.co/NYgZQtS/logo.png' alt='' />
             </Link>
             {error &&
-                <Alert sx={{ width: "50%", mx: 'auto' }} severity="error">{error}</Alert>}
+                <Alert
+                    sx={{ width: "50%", mx: 'auto' }}
+                    severity="error"
+                >{error}</Alert>}
             {user?.email &&
                 <Alert sx={{ width: "50%", mx: 'auto' }} severity="success">Successfully Login</Alert>}
             {
