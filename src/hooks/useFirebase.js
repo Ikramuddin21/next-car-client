@@ -89,8 +89,8 @@ const useFirebase = () => {
 
     useEffect(() => {
         axios.get(`http://localhost:5000/users/${user.email}`)
-        .then(res => setAdmin(res.data.admin));
-    }, []);
+            .then(res => setAdmin(res.data.admin));
+    }, [user.email]);
 
     const saveUser = (email, name, method) => {
         const user = { email: email, displayName: name };

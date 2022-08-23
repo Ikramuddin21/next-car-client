@@ -1,8 +1,8 @@
 import { Button, Container, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import promoBg from '../../../images/promo-banner.jpg';
-import promoCar from '../../../images/promo-car.png';
+import promoBg from '../../../assets/images/promo-banner.jpg';
+import promoCar from '../../../assets/images/promo-car.png';
 
 const PromoBox = () => {
 

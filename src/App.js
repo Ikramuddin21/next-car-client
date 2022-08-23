@@ -1,8 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthProvider/AuthProvider';
+import AddProduct from './Pages/Dashboard/AddProduct/AddProduct';
+import AdminRoute from './Pages/Dashboard/AdminRoute/AdminRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders/ManageAllOrders';
+import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 import Pay from './Pages/Dashboard/Pay/Pay';
 import Review from './Pages/Dashboard/Review/Review';
@@ -21,13 +25,18 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/cars' element={<OurCars />} />
-        <Route path='/*' element={<PrivateRoute />}>
-          <Route path='orders/:id' element={<Orders />} />
-          <Route path='dashboard/*' element={<Dashboard />}>
+        <Route element={<PrivateRoute />}>
+          <Route path='/orders/:id' element={<Orders />} />
+          <Route path='/dashboard/' element={<Dashboard />}>
             <Route path='my-orders' element={<MyOrders />} />
             <Route path='review' element={<Review />} />
             <Route path='pay' element={<Pay />} />
-            <Route path='make-admin' element={<MakeAdmin />} />
+            <Route element={<AdminRoute />}>
+              <Route path='manage-all-orders' element={<ManageAllOrders />} />
+              <Route path='add-product' element={<AddProduct />} />
+              <Route path='make-admin' element={<MakeAdmin />} />
+              <Route path='manage-products' element={<ManageProducts />} />
+            </Route>
           </Route>
         </Route>
         <Route path='/login' element={<Login />} />

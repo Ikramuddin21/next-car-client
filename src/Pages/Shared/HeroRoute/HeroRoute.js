@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
-import heroRouteBanner from '../../../images/hero-route-banner.jpg';
+import heroRouteBanner from '../../../assets/images/hero-route-banner.jpg';
 import { useLocation, Link } from 'react-router-dom';
 
 const HeroRoute = ({ heading }) => {

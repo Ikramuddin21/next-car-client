@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 
 const Product = ({ product, children }) => {
+
     const { title, description, price, img } = product;
     return (
         <Grid item xs={4} sm={4} md={4}>

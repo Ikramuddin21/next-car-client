@@ -37,3 +37,7 @@ a {
     font-size: 10px !important;
     color: #F5831F !important;
 }
+
+.canvasjs-chart-credit {
+    display: none;
+}

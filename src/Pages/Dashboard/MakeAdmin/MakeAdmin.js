@@ -26,7 +26,7 @@ const MakeAdmin = () => {
 
     return (
         <Box>
-            <form onSubmit={handleAdminSubmit} style={{ maxWidth: "450px", display: "flex", alignItems: "center" }}>
+            <form onSubmit={handleAdminSubmit} style={{ maxWidth: "450px"}}>
                 <TextField
                     sx={{ width: "100%" }}
                     id="outlined-basic"
@@ -35,7 +35,7 @@ const MakeAdmin = () => {
                     required
                     variant="outlined"
                 />
-                <Button sx={{ ml: 2 }} type="submit" variant="contained">Admin</Button>
+                <Button sx={{ mt: 2, px: 3 }} type="submit" variant="contained">Admin</Button>
             </form>
             {successAdmin && <Alert style={{ maxWidth: "450px" }} severity="success">Successfully Make Admin</Alert>}
         </Box>

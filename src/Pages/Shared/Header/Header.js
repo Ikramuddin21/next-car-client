@@ -14,7 +14,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const {user, logout} = useAuth();
+    const { user, logout } = useAuth();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -75,11 +75,11 @@ const Header = () => {
                                     <Typography textAlign='center' sx={{ color: 'black' }}>About</Typography>
                                 </MenuItem>
                             </Link>
-                            <Link to='/dashboard'>
+                            {user?.email && <Link to='/dashboard'>
                                 <MenuItem onClick={handleCloseNavMenu}>
                                     <Typography textAlign='center' sx={{ color: 'black' }}>Dashboard</Typography>
                                 </MenuItem>
-                            </Link>
+                            </Link>}
                         </Menu>
                     </Box>
 
@@ -111,14 +111,14 @@ const Header = () => {
                                 About
                             </Button>
                         </Link>
-                        <Link to='/dashboard' style={{ marginLeft: '16px' }}>
+                        {user?.email && <Link to='/dashboard' style={{ marginLeft: '16px' }}>
                             <Button
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 Dashboard
                             </Button>
-                        </Link>
+                        </Link>}
                     </Box>
 
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
