@@ -13,16 +13,17 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import DashboardCommon from '../DashboardCommon/DashboardCommon';
 
-const drawerWidth = 200;
+const drawerWidth = 180;
 
 function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const { user, admin, logout } = useAuth();
+    const {pathname} = useLocation();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -131,8 +132,9 @@ function Dashboard(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Dashboard <span style={{ color: "#BEE554", fontWeight: 600 }}>{user.displayName}</span>
+                    <Typography variant="h6" sx={{ml: 3}} noWrap component="div">
+                        <Link to="/dashboard" style={{color: "white", marginRight: "5px"}}>Dashboard</Link>
+                         <span style={{ color: "#BEE554", fontWeight: 600 }}>{user.displayName}</span>
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -173,7 +175,7 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
-                <DashboardCommon />
+                { pathname === "/dashboard" && <DashboardCommon />}
                 <Outlet />
             </Box>
         </Box>

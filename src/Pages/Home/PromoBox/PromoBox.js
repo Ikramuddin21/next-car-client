@@ -11,6 +11,7 @@ const PromoBox = () => {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',

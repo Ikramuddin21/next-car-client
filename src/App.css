@@ -41,3 +41,8 @@ a {
 .canvasjs-chart-credit {
     display: none;
 }
+
+.status {
+    pointer-events: none;
+    color: #4caf50 !important;
+}

@@ -1,9 +1,10 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
+import { Container } from '@mui/system';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import Product from '../../Shared/Product/Product';
+import MyOrder from '../MyOrder/MyOrder';
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
@@ -30,40 +31,44 @@ const MyOrders = () => {
 
     return (
         <Box sx={{ flexGrow: 1, my: 2 }}>
-            {
-                !myOrders.length ? <Typography
-                    variant='h4'
-                    sx={{ mb: 5, fontWeight: 500 }}
-                >
-                    No Order History
-                </Typography> :
-                    <Typography
+            <Container sx={{mx: 0}}>
+                {
+                    !myOrders.length ? <Typography
                         variant='h4'
                         sx={{ mb: 5, fontWeight: 500 }}
                     >
-                        My All Orders
-                    </Typography>}
-            <Grid container
-                spacing={{ xs: 2, md: 3 }}
-                columns={{ xs: 4, sm: 8, md: 12 }}>
-                {
-                    !myOrders.length ?
-                        <Box sx={{ ml: 3 }}>
-                            <Typography
-                                variant='h6'
-                                sx={{ fontWeight: 500 }}
-                            >
-                                Please back to home and order
-                            </Typography>
-                            <Link to="/">
-                                <Button sx={{ mt: 2 }} variant="contained">Go Home</Button>
-                            </Link>
-                        </Box> :
-                        myOrders.map(product => <Product key={product._id} product={product}>
-                            <Button onClick={() => handleDeleteOrder(product._id)} variant='contained'>Delete</Button>
-                        </Product>)
-                }
-            </Grid>
+                        No Order History
+                    </Typography> :
+                        <Typography
+                            variant='h4'
+                            sx={{ mb: 5, fontWeight: 500 }}
+                        >
+                            My All Orders
+                        </Typography>}
+                <Grid container
+                    spacing={{ xs: 2, md: 3 }}
+                    columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {
+                        !myOrders.length ?
+                            <Box sx={{ ml: 3 }}>
+                                <Typography
+                                    variant='h6'
+                                    sx={{ fontWeight: 500 }}
+                                >
+                                    Please back to home and order
+                                </Typography>
+                                <Link to="/">
+                                    <Button sx={{ mt: 2 }} variant="contained">Go Home</Button>
+                                </Link>
+                            </Box> :
+                            myOrders.map(product => <MyOrder
+                                key={product._id}
+                                product={product}
+                                handleDeleteOrder={handleDeleteOrder}
+                            />)
+                    }
+                </Grid>
+            </Container>
         </Box>
     );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../Shared/Header/Header';
+import Partners from '../../Shared/Partners/Partners';
 import Hero from '../Hero/Hero';
 import Products from '../Products/Products';
 import PromoBox from '../PromoBox/PromoBox';
@@ -13,6 +14,7 @@ const Home = () => {
             <Products />
             <PromoBox />
             <Testimonials />
+            <Partners />
         </>
     );
 };

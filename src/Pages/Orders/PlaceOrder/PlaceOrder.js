@@ -10,7 +10,7 @@ const PlaceOrder = () => {
     const { user } = useAuth();
     const [order, setOrder] = useState({});
     const [orderSuccess, setOrderSuccess] = useState(false);
-    const initialInfo = { userName: user.displayName, email: user.email, address: "" };
+    const initialInfo = { userName: user.displayName, email: user.email, address: "", status: "Pending" };
     const [userInfo, setUserInfo] = useState(initialInfo);
     const { title, description, price, img } = order;
 
