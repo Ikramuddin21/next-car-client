@@ -12,6 +12,7 @@ const Review = () => {
     const [successReview, setSuccessReview] = useState(false);
 
     const handleOnBlur = e => {
+        setSuccessReview(false);
         const name = e.target.name;
         const value = e.target.value;
         const newReview = { ...review }
@@ -64,7 +65,7 @@ const Review = () => {
                 <Button sx={{ mt: 3 }} type="submit" variant="contained">Submit</Button>
             </form>
             {
-                successReview && <Alert style={{ maxWidth: "500px" }} severity="success">Successfully Send</Alert>
+                successReview && <Alert style={{ maxWidth: "500px" }} severity="success">Thand you, for your opinion.</Alert>
             }
         </Box>
     );

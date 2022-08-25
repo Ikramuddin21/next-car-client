@@ -7,11 +7,12 @@ import useAuth from '../../../hooks/useAuth';
 const Login = () => {
 
     const [loginInfo, setLoginInfo] = useState({});
-    const { user, error, isLoading, loginUser, signInUsingGoogle } = useAuth();
+    const { user, error, setError, isLoading, loginUser, signInUsingGoogle } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
     const handleOnBlur = e => {
+        setError(false);
         const name = e.target.name;
         const value = e.target.value;
         const newInfo = { ...loginInfo };

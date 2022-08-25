@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Partners from '../../Shared/Partners/Partners';
 import Hero from '../Hero/Hero';
@@ -15,6 +16,7 @@ const Home = () => {
             <PromoBox />
             <Testimonials />
             <Partners />
+            <Footer />
         </>
     );
 };

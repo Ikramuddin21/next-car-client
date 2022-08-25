@@ -13,7 +13,7 @@ const Partners = () => {
         backgroundPosition: 'center',
         color: 'white',
         maxWidth: '1100px',
-        margin: '100px auto',
+        margin: '115px auto',
         padding: '40px 50px',
         textAlign: 'center',
         borderRadius: '5px'

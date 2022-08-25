@@ -122,7 +122,7 @@ const Header = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-                        {user?.email && <Typography variant="body1" marginRight={{ xs: 2, md: 3 }}>{user.displayName}</Typography>}
+                        {user?.email && <Typography variant="body1" marginRight={{ xs: 2, md: 3 }}>{user?.displayName}</Typography>}
                         {
                             user?.email ? <Button onClick={logout} variant='contained'>Logout</Button> :
                                 <Link to='/login'>

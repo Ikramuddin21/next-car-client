@@ -40,8 +40,6 @@ const useFirebase = () => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
-                setError("");
-
                 // save user data
                 saveUser(email, name, "POST");
 
@@ -51,6 +49,7 @@ const useFirebase = () => {
                     .then(() => { })
                     .catch(() => { })
                 navigate("/");
+                setError("");
             })
             .catch(error => {
                 setError(error.message);
@@ -85,7 +84,7 @@ const useFirebase = () => {
             setIsLoading(false);
         })
         return () => unsubscribe;
-    }, []);
+    }, [auth]);
 
     useEffect(() => {
         axios.get(`http://localhost:5000/users/${user.email}`)
@@ -118,6 +117,7 @@ const useFirebase = () => {
         user,
         admin,
         error,
+        setError,
         isLoading,
         signInUsingGoogle,
         registerNewUser,

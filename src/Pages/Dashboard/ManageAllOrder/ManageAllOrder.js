@@ -1,17 +1,10 @@
+import React from 'react';
 import { Avatar, Button, Card, CardContent, CardHeader, CardMedia, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useEffect, useState } from 'react';
 
-const ManageAllOrder = ({ manageOrder, handleStatus, handleDeleteOrder }) => {
-    const [pointerStyle, setPointerStyle] = useState(false);
+const ManageAllOrder = ({ manageOrder, shippedStyle, handleStatus, handleDeleteOrder }) => {
 
     const { _id, title, description, price, img, userName, email, status } = manageOrder;
-
-    useEffect(() => {
-        if (status === "Shipped") {
-            setPointerStyle(true);
-        }
-    }, [status]);
 
     return (
         <Grid item xs={8} md={6} style={{ maxWidth: 450 }}>
@@ -28,7 +21,7 @@ const ManageAllOrder = ({ manageOrder, handleStatus, handleDeleteOrder }) => {
                             onClick={() => handleStatus(_id)}
                             sx={{ mt: 1 }}
                             variant="text"
-                            className={pointerStyle ? "status" : ""}
+                            className={status === "Shipped" ? "status" : ""}
                         >
                             {status}
                         </Button>

@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -7,6 +7,7 @@ import ManageAllOrder from '../ManageAllOrder/ManageAllOrder';
 const ManageAllOrders = () => {
 
     const [manageOrders, setManageOrders] = useState([]);
+    const [shippedStyle, setShippedStyle] = useState(false);
 
     useEffect(() => {
         axios.get('http://localhost:5000/orders/manage')
@@ -19,12 +20,12 @@ const ManageAllOrders = () => {
         clickedOrder.status = "Shipped";
         console.log('status', clickedOrder);
         axios.put(`http://localhost:5000/orders?id=${id}`, clickedOrder)
-        .then(res => {
-            if(res.data.modifiedCount > 0) {
-                const allOrders = [...manageOrders]
-                setManageOrders(allOrders);
-            }
-        })
+            .then(res => {
+                if (res.data.modifiedCount > 0) {
+                    const allOrders = [...manageOrders]
+                    setManageOrders(allOrders);
+                }
+            })
     };
 
     // handle delete order
@@ -60,6 +61,7 @@ const ManageAllOrders = () => {
                                 manageOrders.map((manageOrder, index) => <ManageAllOrder
                                     key={index}
                                     manageOrder={manageOrder}
+                                    shippedStyle={shippedStyle}
                                     handleStatus={handleStatus}
                                     handleDeleteOrder={handleDeleteOrder}
                                 />)

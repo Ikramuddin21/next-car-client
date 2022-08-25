@@ -6,6 +6,7 @@ const MakeAdmin = () => {
 
     const [email, setEmail] = useState("");
     const [successAdmin, setSuccessAdmin] = useState(false);
+    const [error, setError] = useState(false);
 
     const handleOnBlur = e => {
         setEmail(e.target.value)
@@ -19,7 +20,12 @@ const MakeAdmin = () => {
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     setSuccessAdmin(true);
+                    setError(false);
                     e.target.reset();
+                }
+                else {
+                    setError(true);
+                    setSuccessAdmin(false);
                 }
             })
     };
@@ -35,8 +41,9 @@ const MakeAdmin = () => {
                     required
                     variant="outlined"
                 />
-                <Button sx={{ mt: 2, px: 3 }} type="submit" variant="contained">Admin</Button>
+                <Button sx={{ my: 2, px: 3 }} type="submit" variant="contained">Admin</Button>
             </form>
+            {error && <Alert style={{ maxWidth: "450px" }} severity="error">Invalid User</Alert>}
             {successAdmin && <Alert style={{ maxWidth: "450px" }} severity="success">Successfully Make Admin</Alert>}
         </Box>
     );

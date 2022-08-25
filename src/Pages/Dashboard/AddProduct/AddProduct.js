@@ -2,15 +2,14 @@ import { Alert, Button, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import axios from 'axios';
 import React, { useState } from 'react';
-import useAuth from '../../../hooks/useAuth';
 
 const AddProduct = () => {
 
-    const { user } = useAuth();
     const [addProduct, setAddProduct] = useState({});
     const [successAddProduct, setSuccessAddProduct] = useState(false);
 
     const handleOnBlur = e => {
+        setSuccessAddProduct(false);
         const name = e.target.name;
         const value = e.target.value;
         const newProduct = { ...addProduct }

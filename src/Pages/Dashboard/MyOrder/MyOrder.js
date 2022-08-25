@@ -1,18 +1,10 @@
+import React from 'react';
 import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
-import React, { useEffect, useState } from 'react';
 
 const MyOrder = ({ product, handleDeleteOrder }) => {
 
-    const [pointerStyle, setPointerStyle] = useState(false);
     const { _id, title, description, price, img, status } = product;
-
-    useEffect(() => {
-        if (status === "Shipped") {
-            console.log('ship');
-            setPointerStyle(true);
-        }
-    }, [status])
 
     return (
         <Grid item xs={4} sm={4} md={4}>
@@ -48,7 +40,7 @@ const MyOrder = ({ product, handleDeleteOrder }) => {
                         alignItems: 'center',
                         justifyContent: 'space-between'
                     }}>
-                        <Button sx={{mr: "3px", pointerEvents: "none"}} variant="text" className={pointerStyle ? "status" : ""}>{status}</Button>
+                        <Button sx={{mr: "3px", pointerEvents: "none"}} variant="text" className={status === "Shipped" ? "status" : ""}>{status}</Button>
                         <Button sx={{ml: "3px"}} onClick={() => handleDeleteOrder(_id)} variant='contained'>Delete</Button>
                     </Box>
                 </Box>
