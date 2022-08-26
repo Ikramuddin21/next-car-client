@@ -32,6 +32,7 @@ const Review = () => {
       }
     });
   };
+  console.log(review);
   return (
     <Box>
       <Typography variant="h4" sx={{ mt: 2 }}>

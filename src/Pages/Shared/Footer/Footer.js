@@ -64,13 +64,13 @@ const Footer = () => {
                 </Link>
               </ListItem>
               <ListItem>
-                <Link style={{ color: "lightgray" }} to="/cars">
-                  <ListItemText>Our Cars</ListItemText>
+                <Link style={{ color: "lightgray" }} to="/blogs">
+                  <ListItemText>Blog</ListItemText>
                 </Link>
               </ListItem>
               <ListItem>
-                <Link style={{ color: "lightgray" }} to="/about">
-                  <ListItemText>About</ListItemText>
+                <Link style={{ color: "lightgray" }} to="/cars">
+                  <ListItemText>Our Cars</ListItemText>
                 </Link>
               </ListItem>
               <ListItem>
@@ -80,7 +80,7 @@ const Footer = () => {
               </ListItem>
               <ListItem>
                 <Link style={{ color: "lightgray" }} to="">
-                  <ListItemText>Popular Blog</ListItemText>
+                  <ListItemText>Latest News</ListItemText>
                 </Link>
               </ListItem>
             </List>

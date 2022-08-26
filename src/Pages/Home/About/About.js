@@ -22,7 +22,7 @@ const About = () => {
               variant="h4"
             >
               Welcome To
-              <span style={{ color: "#F5831F" }}>Next Car</span>
+              <span style={{ color: "#F5831F" }}> Next Car</span>
             </Typography>
             <Typography sx={{ lineHeight: "27px" }} variant="body1">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo

@@ -102,13 +102,11 @@ function Dashboard(props) {
               </ListItemButton>
             </ListItem>
           </Link>
-          {/* <Link to="" style={{ color: "black" }}> */}
           <ListItem disablePadding onClick={logout}>
             <ListItemButton>
               <ListItemText sx={{ pl: 1 }}>Logout</ListItemText>
             </ListItemButton>
           </ListItem>
-          {/* </Link> */}
         </List>
       )}
     </div>
