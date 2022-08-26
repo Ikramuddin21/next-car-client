@@ -17,5 +17,5 @@
 ### Authentication
 - Firebase
 
-Live: [https://next-car-2971a.web.app/](https://next-car-2971a.web.app/)
-Server: [https://github.com/Ikramuddin21/next-car-server/](https://github.com/Ikramuddin21/next-car-server/)
+### Live: [https://next-car-2971a.web.app/](https://next-car-2971a.web.app/)
+### Server: [https://github.com/Ikramuddin21/next-car-server/](https://github.com/Ikramuddin21/next-car-server/)
