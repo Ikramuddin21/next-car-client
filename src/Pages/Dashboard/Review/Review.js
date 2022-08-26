@@ -25,7 +25,7 @@ const Review = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:5000/reviews", review).then((res) => {
+    axios.post("https://guarded-ridge-49297.herokuapp.com/reviews", review).then((res) => {
       if (res.data.insertedId) {
         setSuccessReview(true);
         e.target.reset();

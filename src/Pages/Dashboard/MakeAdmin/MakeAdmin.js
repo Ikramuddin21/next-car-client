@@ -17,7 +17,7 @@ const MakeAdmin = () => {
     e.preventDefault();
 
     const user = { email };
-    axios.put("http://localhost:5000/users/admin", user).then((res) => {
+    axios.put("https://guarded-ridge-49297.herokuapp.com/users/admin", user).then((res) => {
       if (res.data.modifiedCount > 0) {
         setSuccessAdmin(true);
         setError(false);

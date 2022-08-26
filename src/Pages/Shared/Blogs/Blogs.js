@@ -8,7 +8,7 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/blogs").then((res) => setBlogs(res.data));
+    axios.get("https://guarded-ridge-49297.herokuapp.com/blogs").then((res) => setBlogs(res.data));
   }, []);
 
   return (

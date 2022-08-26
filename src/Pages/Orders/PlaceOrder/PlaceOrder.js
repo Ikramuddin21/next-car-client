@@ -29,7 +29,7 @@ const PlaceOrder = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`https://guarded-ridge-49297.herokuapp.com/products/${id}`)
       .then((res) => setOrder(res.data));
   }, [id]);
 
@@ -47,7 +47,7 @@ const PlaceOrder = () => {
     e.preventDefault();
     const newOrder = { ...userInfo, title, description, price, img };
 
-    axios.post("http://localhost:5000/orders", newOrder).then((res) => {
+    axios.post("https://guarded-ridge-49297.herokuapp.com/orders", newOrder).then((res) => {
       if (res.data.insertedId) {
         setOrderSuccess(true);
       }

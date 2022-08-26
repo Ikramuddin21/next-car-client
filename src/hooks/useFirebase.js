@@ -87,13 +87,13 @@ const useFirebase = () => {
     }, [auth]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/users/${user.email}`)
+        axios.get(`https://guarded-ridge-49297.herokuapp.com/users/${user.email}`)
             .then(res => setAdmin(res.data.admin));
     }, [user.email]);
 
     const saveUser = (email, name, method) => {
         const user = { email: email, displayName: name };
-        fetch("http://localhost:5000/users", {
+        fetch("https://guarded-ridge-49297.herokuapp.com/users", {
             method: method,
             headers: {
                 "content-type": "application/json"

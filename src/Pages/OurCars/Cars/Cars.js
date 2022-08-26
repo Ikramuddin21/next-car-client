@@ -10,7 +10,7 @@ const Cars = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://guarded-ridge-49297.herokuapp.com/products")
       .then((res) => setProducts(res.data));
   }, []);
 

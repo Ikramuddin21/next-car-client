@@ -12,7 +12,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reviews')
+        axios.get('https://guarded-ridge-49297.herokuapp.com/reviews')
             .then(res => setReviews(res.data))
     }, []);
 

@@ -10,7 +10,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/products')
+        axios.get('https://guarded-ridge-49297.herokuapp.com/products')
             .then(res => setProducts(res.data.slice(0, 6)))
     }, []);
     return (

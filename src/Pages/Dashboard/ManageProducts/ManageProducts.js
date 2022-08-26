@@ -9,7 +9,7 @@ const ManageProducts = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://guarded-ridge-49297.herokuapp.com/products")
       .then((res) => setProducts(res.data));
   }, []);
 
@@ -17,7 +17,7 @@ const ManageProducts = () => {
   const handleDeleteOrder = (id) => {
     const confirmation = window.confirm("Do you want to delete product?");
     if (confirmation) {
-      axios.delete(`http://localhost:5000/products/${id}`).then((res) => {
+      axios.delete(`https://guarded-ridge-49297.herokuapp.com/products/${id}`).then((res) => {
         if (res.data.deletedCount > 0) {
           const remainingOrder = products.filter(
             (product) => product._id !== id

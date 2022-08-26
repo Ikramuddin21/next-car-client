@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/orders/manage")
+      .get("https://guarded-ridge-49297.herokuapp.com/orders/manage")
       .then((res) => setManageOrders(res.data));
   }, []);
 
@@ -17,9 +17,8 @@ const ManageAllOrders = () => {
   const handleStatus = (id) => {
     const clickedOrder = manageOrders.find((order) => order._id === id);
     clickedOrder.status = "Shipped";
-    console.log("status", clickedOrder);
     axios
-      .put(`http://localhost:5000/orders?id=${id}`, clickedOrder)
+      .put(`https://guarded-ridge-49297.herokuapp.com/orders?id=${id}`, clickedOrder)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           const allOrders = [...manageOrders];
@@ -32,7 +31,7 @@ const ManageAllOrders = () => {
   const handleDeleteOrder = (id) => {
     const confirmation = window.confirm("Do you want to delete order?");
     if (confirmation) {
-      axios.delete(`http://localhost:5000/orders/${id}`).then((res) => {
+      axios.delete(`https://guarded-ridge-49297.herokuapp.com/orders/${id}`).then((res) => {
         if (res.data.deletedCount > 0) {
           const remainingOrder = manageOrders.filter(
             (order) => order._id !== id
