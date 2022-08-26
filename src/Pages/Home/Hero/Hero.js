@@ -23,7 +23,7 @@ const Hero = () => {
                     <Grid item
                         xs={12} md={6}
                         sx={{ display: 'flex', alignItems: 'center' }}>
-                        <Box textAlign={{ xs: 'center', md: 'left' }}>
+                        <Box>
                             <Typography
                                 variant='h2'
                                 sx={{

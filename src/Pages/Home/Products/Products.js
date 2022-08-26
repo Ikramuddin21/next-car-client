@@ -14,11 +14,11 @@ const Products = () => {
             .then(res => setProducts(res.data.slice(0, 6)))
     }, []);
     return (
-        <Box sx={{ flexGrow: 1, my: 10 }}>
+        <Box sx={{ flexGrow: 1, mt: 10 }}>
             <Container style={{ padding: '0 50px' }}>
                 <Typography
                     variant='h3'
-                    sx={{ mb: 5, fontWeight: 500 }}
+                    sx={{ mb: 5, fontSize: "40px", fontWeight: 500 }}
                 >
                     Our Products
                 </Typography>

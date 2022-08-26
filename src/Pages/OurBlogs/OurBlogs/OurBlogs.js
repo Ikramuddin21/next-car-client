@@ -1,18 +1,20 @@
 import React from 'react';
+import Blogs from '../../Shared/Blogs/Blogs';
 import Footer from '../../Shared/Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import HeroRoute from '../../Shared/HeroRoute/HeroRoute';
-import Cars from '../Cars/Cars';
+import Partners from '../../Shared/Partners/Partners';
 
-const OurCars = () => {
+const OurBlogs = () => {
     return (
         <>
             <Header />
-            <HeroRoute heading="All Cars" />
-            <Cars />
+            <HeroRoute />
+            <Blogs />
+            <Partners />
             <Footer />
         </>
     );
 };
 
-export default OurCars;
+export default OurBlogs;

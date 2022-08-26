@@ -50,7 +50,7 @@ const Testimonials = () => {
     };
 
     return (
-        <Container style={{ marginBottom: '60px', padding: '0 50px' }}>
+        <Container style={{ marginTop: '80px', padding: '0 50px' }}>
             <Typography
                 variant='h4'
                 sx={{ mb: 5, fontWeight: 500, color: '#F5831F' }}

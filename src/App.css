@@ -1,17 +1,19 @@
+/* common style */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #f5faff;
+  background: #f5faff;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
+/* testimonial styles */
 .slick-slide > div {
   margin: 0 10px;
 }
@@ -21,28 +23,30 @@ a {
 }
 
 .slick-arrow {
-    z-index: 9;
+  z-index: 9;
 }
 
 .slick-prev::before,
 .slick-next::before {
-    position: relative;
-    left: -10px;
-    font-size: 40px !important;
-    color: #1976d2 !important;
+  position: relative;
+  left: -10px;
+  font-size: 40px !important;
+  color: #1976d2 !important;
 }
 
 .slick-dots li button::before {
-    top: 25px !important;
-    font-size: 10px !important;
-    color: #F5831F !important;
+  top: 25px !important;
+  font-size: 10px !important;
+  color: #f5831f !important;
 }
 
+/* dashboard style */
 .canvasjs-chart-credit {
-    display: none;
+  display: none;
 }
 
+/* ManageAllOrder & MyOrder style */
 .status {
-    pointer-events: none;
-    color: #4caf50 !important;
+  pointer-events: none;
+  color: #4caf50 !important;
 }
