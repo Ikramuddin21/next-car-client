@@ -12,7 +12,7 @@ const MyOrders = () => {
 
   useEffect(() => {
     axios
-      .get(`https://guarded-ridge-49297.herokuapp.com/orders?email=${user.email}`)
+      .get(`https://next-car-server.onrender.com/orders?email=${user.email}`)
       .then((res) => setMyOrders(res.data));
   }, [user.email]);
 
@@ -20,12 +20,14 @@ const MyOrders = () => {
   const handleDeleteOrder = (id) => {
     const confirmation = window.confirm("Are you want to delete order?");
     if (confirmation) {
-      axios.delete(`https://guarded-ridge-49297.herokuapp.com/orders/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          const remainingOrder = myOrders.filter((order) => order._id !== id);
-          setMyOrders(remainingOrder);
-        }
-      });
+      axios
+        .delete(`https://next-car-server.onrender.com/orders/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const remainingOrder = myOrders.filter((order) => order._id !== id);
+            setMyOrders(remainingOrder);
+          }
+        });
     }
   };
 
@@ -51,7 +53,7 @@ const MyOrders = () => {
               <Typography variant="h6" sx={{ fontWeight: 500 }}>
                 Please back to home and order
               </Typography>
-              <Link to="/">
+              <Link aria-label="Go to home page" to="/">
                 <Button sx={{ mt: 2 }} variant="contained">
                   Go Home
                 </Button>

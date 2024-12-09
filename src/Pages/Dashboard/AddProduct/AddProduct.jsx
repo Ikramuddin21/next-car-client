@@ -19,12 +19,14 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("https://guarded-ridge-49297.herokuapp.com/products", addProduct).then((res) => {
-      if (res.data.insertedId) {
-        setSuccessAddProduct(true);
-        e.target.reset();
-      }
-    });
+    axios
+      .post("https://next-car-server.onrender.com/products", addProduct)
+      .then((res) => {
+        if (res.data.insertedId) {
+          setSuccessAddProduct(true);
+          e.target.reset();
+        }
+      });
   };
   return (
     <Box>

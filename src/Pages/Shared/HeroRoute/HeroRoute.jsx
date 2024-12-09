@@ -26,7 +26,7 @@ const HeroRoute = ({ heading }) => {
             pathname.slice(2)}
       </Typography>
       <Box sx={{ mt: 1 }}>
-        <Link to="/">
+        <Link aria-label="Go to home page" to="/">
           <Typography
             variant="h5"
             component="span"

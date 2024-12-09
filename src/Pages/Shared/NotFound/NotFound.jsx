@@ -17,7 +17,7 @@ const NotFound = () => {
       <Typography style={{ marginTop: "10px" }} variant="h4">
         404!!!
       </Typography>
-      <Link to="/" style={{ marginTop: "10px" }}>
+      <Link aria-label="Go to home page" to="/" style={{ marginTop: "10px" }}>
         <Button variant="contained">Go Home</Button>
       </Link>
     </Box>

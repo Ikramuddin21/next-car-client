@@ -18,11 +18,11 @@ const Footer = () => {
       <Container style={{ padding: "0 50px" }}>
         <Grid container spacing={2} sx={{ py: 5, textAlign: "center" }}>
           <Grid item xs={12} md={4}>
-            <Link to="/">
+            <Link aria-label="Go to home page" to="/">
               <img
                 style={{ width: 70 }}
                 src="https://i.ibb.co/NYgZQtS/logo.png"
-                alt=""
+                alt="Logo"
               />
             </Link>
             <Typography variant="body1" sx={{ fontSize: "15px", my: 2 }}>
@@ -59,27 +59,47 @@ const Footer = () => {
             <Typography variant="h5">Quick Links</Typography>
             <List>
               <ListItem>
-                <Link style={{ color: "lightgray" }} to="/home">
+                <Link
+                  aria-label="Go to home page"
+                  style={{ color: "lightgray" }}
+                  to="/home"
+                >
                   <ListItemText>Home</ListItemText>
                 </Link>
               </ListItem>
               <ListItem>
-                <Link style={{ color: "lightgray" }} to="/blogs">
+                <Link
+                  aria-label="Go to blogs page"
+                  style={{ color: "lightgray" }}
+                  to="/blogs"
+                >
                   <ListItemText>Blog</ListItemText>
                 </Link>
               </ListItem>
               <ListItem>
-                <Link style={{ color: "lightgray" }} to="/cars">
+                <Link
+                  aria-label="Go to cars page"
+                  style={{ color: "lightgray" }}
+                  to="/cars"
+                >
                   <ListItemText>Our Cars</ListItemText>
                 </Link>
               </ListItem>
               <ListItem>
-                <Link style={{ color: "lightgray" }} to="">
+                <Link
+                  aria-label="Go to contact page"
+                  style={{ color: "lightgray" }}
+                  to=""
+                >
                   <ListItemText>Contact Us</ListItemText>
                 </Link>
               </ListItem>
               <ListItem>
-                <Link style={{ color: "lightgray" }} to="">
+                <Link
+                  aria-label="Go to latest news page"
+                  style={{ color: "lightgray" }}
+                  to=""
+                >
                   <ListItemText>Latest News</ListItemText>
                 </Link>
               </ListItem>
@@ -124,6 +144,7 @@ const Footer = () => {
                 Follow Media :
               </Typography>
               <Link
+                aria-label="Go to facebook"
                 style={{
                   color: "white",
                   background: "#4064AC",
@@ -136,6 +157,7 @@ const Footer = () => {
                 <FacebookRoundedIcon />
               </Link>
               <Link
+                aria-label="Go to instagram"
                 style={{
                   color: "white",
                   background: "#4064AC",
@@ -148,6 +170,7 @@ const Footer = () => {
                 <InstagramIcon />
               </Link>
               <Link
+                aria-label="Go to twitter"
                 style={{
                   color: "white",
                   background: "#4064AC",
@@ -160,6 +183,7 @@ const Footer = () => {
                 <TwitterIcon />
               </Link>
               <Link
+                aria-label="Go to google"
                 style={{
                   color: "white",
                   background: "#4064AC",

@@ -8,7 +8,9 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("https://guarded-ridge-49297.herokuapp.com/blogs").then((res) => setBlogs(res.data));
+    axios
+      .get("https://next-car-server.onrender.com/blogs")
+      .then((res) => setBlogs(res.data));
   }, []);
 
   return (

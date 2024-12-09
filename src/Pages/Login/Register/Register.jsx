@@ -11,27 +11,26 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
-const Login = () => {
-  const [loginInfo, setLoginInfo] = useState({});
-  const { user, error, setError, isLoading, loginUser, signInUsingGoogle } =
-    useAuth();
-  const location = useLocation();
+const Register = () => {
+  const [registerInfo, setRegisterInfo] = useState({});
+  const {
+    user,
+    error,
+    setError,
+    isLoading,
+    registerNewUser,
+    signInUsingGoogle,
+  } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleOnBlur = (e) => {
     setError(false);
     const name = e.target.name;
     const value = e.target.value;
-    const newInfo = { ...loginInfo };
+    const newInfo = { ...registerInfo };
     newInfo[name] = value;
-    setLoginInfo(newInfo);
-  };
-
-  // handle login submit
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    loginUser(loginInfo.email, loginInfo.password, location, navigate);
-    e.target.reset();
+    setRegisterInfo(newInfo);
   };
 
   // handle google sign in
@@ -39,13 +38,30 @@ const Login = () => {
     signInUsingGoogle(location, navigate);
   };
 
+  // handle register submit
+  const handleRegisterSubmit = (e) => {
+    e.preventDefault();
+    if (registerInfo.password !== registerInfo.password2) {
+      alert("Your password did not match");
+      return;
+    }
+
+    registerNewUser(
+      registerInfo.email,
+      registerInfo.password,
+      registerInfo.name,
+      navigate
+    );
+    e.target.reset();
+  };
+
   return (
     <Container sx={{ textAlign: "center", mt: 5 }}>
-      <Link to="/">
+      <Link aria-label="Go to home page" to="/">
         <img
           style={{ width: 100 }}
           src="https://i.ibb.co/NYgZQtS/logo.png"
-          alt=""
+          alt="Logo"
         />
       </Link>
       {error && (
@@ -55,22 +71,16 @@ const Login = () => {
       )}
       {user?.email && (
         <Alert sx={{ width: "50%", mx: "auto" }} severity="success">
-          Successfully Login
+          Successfully Register
         </Alert>
       )}
       {isLoading ? (
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            mt: 5,
-          }}
-        >
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
           <CircularProgress />
         </Box>
       ) : (
         <form
-          onSubmit={handleLoginSubmit}
+          onSubmit={handleRegisterSubmit}
           style={{
             maxWidth: "450px",
             margin: "40px auto",
@@ -82,7 +92,16 @@ const Login = () => {
             boxShadow: "rgba(0, 0, 0, 0.4) 0px 30px 90px",
           }}
         >
-          <Typography variant="h4">Please Login</Typography>
+          <Typography variant="h4">Please Register</Typography>
+          <TextField
+            sx={{ width: "93%", mt: 3 }}
+            id="standard-basic"
+            label="Name"
+            name="name"
+            required
+            onBlur={handleOnBlur}
+            variant="standard"
+          />
           <TextField
             sx={{ width: "93%", mt: 3 }}
             id="standard-basic"
@@ -103,15 +122,25 @@ const Login = () => {
             onBlur={handleOnBlur}
             variant="standard"
           />
+          <TextField
+            sx={{ width: "93%", mt: 3 }}
+            id="standard-basic"
+            label="Confirm password"
+            type="password"
+            name="password2"
+            required
+            onBlur={handleOnBlur}
+            variant="standard"
+          />
           <Button
             sx={{ width: "93%", mt: 6, mb: 3 }}
             type="submit"
             variant="contained"
           >
-            Login
+            Register
           </Button>
-          <Link to="/register">
-            <Button variant="text">New User? Please Register</Button>
+          <Link aria-label="Go to login page" to="/login">
+            <Button variant="text">Already Registered? Please Login</Button>
           </Link>
           <Button
             onClick={handleGoogleSignIn}
@@ -127,4 +156,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

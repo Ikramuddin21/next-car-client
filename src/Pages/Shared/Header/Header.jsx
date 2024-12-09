@@ -29,11 +29,11 @@ const Header = () => {
       <Container>
         <Toolbar>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <Link to="/">
+            <Link aria-label="Go to home page" to="/">
               <img
                 style={{ width: 65 }}
                 src="https://i.ibb.co/NYgZQtS/logo.png"
-                alt=""
+                alt="Logo"
               />
             </Link>
             <IconButton
@@ -64,21 +64,21 @@ const Header = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <Link to="/home">
+              <Link aria-label="Go to home page" to="/home">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" sx={{ color: "black" }}>
                     Home
                   </Typography>
                 </MenuItem>
               </Link>
-              <Link to="/cars">
+              <Link aria-label="Go to cars page" to="/cars">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" sx={{ color: "black" }}>
                     Our Cars
                   </Typography>
                 </MenuItem>
               </Link>
-              <Link to="/blogs">
+              <Link aria-label="Go to blogs page" to="/blogs">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" sx={{ color: "black" }}>
                     Blog
@@ -86,7 +86,7 @@ const Header = () => {
                 </MenuItem>
               </Link>
               {user?.email && (
-                <Link to="/dashboard">
+                <Link aria-label="Go to dashboard page" to="/dashboard">
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center" sx={{ color: "black" }}>
                       Dashboard
@@ -97,43 +97,84 @@ const Header = () => {
             </Menu>
           </Box>
 
+          {/* medium or upper device */}
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Link to="/">
+            <Link aria-label="Go to home page" to="/">
               <img
                 style={{ width: 65 }}
                 src="https://i.ibb.co/NYgZQtS/logo.png"
-                alt=""
+                alt="Logo"
               />
             </Link>
-            <Link to="/home" style={{ marginLeft: "16px" }}>
+            <Link
+              aria-label="Go to home page"
+              to="/home"
+              style={{ marginLeft: "16px" }}
+            >
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontSize: "16px",
+                  textTransform: "capitalize",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 Home
               </Button>
             </Link>
-            <Link to="/cars" style={{ marginLeft: "16px" }}>
+            <Link
+              aria-label="Go to cars page"
+              to="/cars"
+              style={{ marginLeft: "16px" }}
+            >
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontSize: "16px",
+                  textTransform: "capitalize",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 Our Cars
               </Button>
             </Link>
-            <Link to="/blogs" style={{ marginLeft: "16px" }}>
+            <Link
+              aria-label="Go to blogs page"
+              to="/blogs"
+              style={{ marginLeft: "16px" }}
+            >
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  fontSize: "16px",
+                  textTransform: "capitalize",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 Blog
               </Button>
             </Link>
             {user?.email && (
-              <Link to="/dashboard" style={{ marginLeft: "16px" }}>
+              <Link
+                aria-label="Go to dashboard page"
+                to="/dashboard"
+                style={{ marginLeft: "16px" }}
+              >
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    fontSize: "16px",
+                    textTransform: "capitalize",
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                  }}
                 >
                   Dashboard
                 </Button>
@@ -152,7 +193,7 @@ const Header = () => {
                 Logout
               </Button>
             ) : (
-              <Link to="/login">
+              <Link aria-label="Go to login page" to="/login">
                 <Button variant="contained">Login</Button>
               </Link>
             )}

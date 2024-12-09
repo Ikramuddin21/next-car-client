@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React from "react";
-import CanvasJSReact from "../../../assets/canvasjs.react";
-const CanvasJSChart = CanvasJSReact.CanvasJSChart;
+/* import CanvasJSReact from "../../../assets/canvasjs.react";
+const CanvasJSChart = CanvasJSReact.CanvasJSChart; */
 
 const DashboardCommon = () => {
   const options = {
@@ -40,7 +40,8 @@ const DashboardCommon = () => {
   };
   return (
     <Box sx={{ mb: 5, width: "75%" }}>
-      <CanvasJSChart options={options} />
+      {/*       <CanvasJSChart options={options} />
+       */}
     </Box>
   );
 };

@@ -24,7 +24,7 @@ const PromoBox = () => {
       <Container style={{ padding: "20px 50px" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
-            <img style={{ width: "90%" }} src={promoCar} alt="" />
+            <img style={{ width: "90%" }} src={promoCar} alt="Promo car" />
           </Grid>
           <Grid
             item

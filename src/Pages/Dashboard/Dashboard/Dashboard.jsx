@@ -32,46 +32,62 @@ function Dashboard(props) {
   const drawer = (
     <div>
       <Toolbar>
-        <Link to="/">
+        <Link aria-label="Go to home page" to="/">
           <img
             style={{ width: 58 }}
             src="https://i.ibb.co/NYgZQtS/logo.png"
-            alt=""
+            alt="Logo"
           />
         </Link>
       </Toolbar>
       <Divider />
       {user?.email && admin ? (
         <List>
-          <Link to="manage-all-orders" style={{ color: "black" }}>
+          <Link
+            aria-label="Go to manage all orders page"
+            to="manage-all-orders"
+            style={{ color: "black" }}
+          >
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemText sx={{ pl: 1 }}>Manage All Orders</ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link to="add-product" style={{ color: "black" }}>
+          <Link
+            aria-label="Go to add product page"
+            to="add-product"
+            style={{ color: "black" }}
+          >
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemText sx={{ pl: 1 }}>Add A Product</ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link to="make-admin" style={{ color: "black" }}>
+          <Link
+            aria-label="Go to make admin page"
+            to="make-admin"
+            style={{ color: "black" }}
+          >
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemText sx={{ pl: 1 }}>Make Admin</ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link to="manage-products" style={{ color: "black" }}>
+          <Link
+            aria-label="Go to manage products page"
+            to="manage-products"
+            style={{ color: "black" }}
+          >
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemText sx={{ pl: 1 }}>Manage Products</ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
-          {/* <Link to="" style={{ color: "black" }}> */}
+          {/* <Link aria-label="" to="" style={{ color: "black" }}> */}
           <ListItem disablePadding onClick={logout}>
             <ListItemButton>
               <ListItemText sx={{ pl: 1 }}>Logout</ListItemText>
@@ -81,21 +97,29 @@ function Dashboard(props) {
         </List>
       ) : (
         <List>
-          <Link to="my-orders" style={{ color: "black" }}>
+          <Link
+            aria-label="Go to my orders page"
+            to="my-orders"
+            style={{ color: "black" }}
+          >
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemText sx={{ pl: 1 }}>My Orders</ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link to="review" style={{ color: "black" }}>
+          <Link
+            aria-label="Go to review page"
+            to="review"
+            style={{ color: "black" }}
+          >
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemText sx={{ pl: 1 }}>Review</ListItemText>
               </ListItemButton>
             </ListItem>
           </Link>
-          <Link to="pay" style={{ color: "black" }}>
+          <Link aria-label="Go to pay page" to="pay" style={{ color: "black" }}>
             <ListItem disablePadding>
               <ListItemButton>
                 <ListItemText sx={{ pl: 1 }}>Pay</ListItemText>
@@ -137,6 +161,7 @@ function Dashboard(props) {
           </IconButton>
           <Typography variant="h6" sx={{ ml: 3 }} noWrap component="div">
             <Link
+              aria-label="Go to dashboard page"
               to="/dashboard"
               style={{ color: "white", marginRight: "5px" }}
             >

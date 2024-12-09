@@ -14,7 +14,7 @@ const About = () => {
           sx={{ display: "flex", alignItems: "center" }}
         >
           <Box>
-            <Typography sx={{ color: "#F5831F", fontWeight: 500 }} variant="h5">
+            <Typography sx={{ color: "#f57709", fontWeight: 500 }} variant="h5">
               About Us
             </Typography>
             <Typography
@@ -22,7 +22,7 @@ const About = () => {
               variant="h4"
             >
               Welcome To
-              <span style={{ color: "#F5831F" }}> Next Car</span>
+              <span style={{ color: "#f57709" }}> Next Car</span>
             </Typography>
             <Typography sx={{ lineHeight: "27px" }} variant="body1">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo
@@ -35,7 +35,7 @@ const About = () => {
             </Typography>
             <Box sx={{ mt: 2 }}>
               <Typography
-                sx={{ color: "#F5831F", fontWeight: 600 }}
+                sx={{ color: "#f57709", fontWeight: 600 }}
                 variant="h6"
               >
                 Peter Berry
@@ -48,7 +48,7 @@ const About = () => {
           <img
             style={{ width: "100%", borderRadius: "5px" }}
             src={about}
-            alt=""
+            alt="About"
           />
         </Grid>
       </Grid>

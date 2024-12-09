@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
 
   useEffect(() => {
     axios
-      .get("https://guarded-ridge-49297.herokuapp.com/orders/manage")
+      .get("https://next-car-server.onrender.com/orders/manage")
       .then((res) => setManageOrders(res.data));
   }, []);
 
@@ -18,7 +18,7 @@ const ManageAllOrders = () => {
     const clickedOrder = manageOrders.find((order) => order._id === id);
     clickedOrder.status = "Shipped";
     axios
-      .put(`https://guarded-ridge-49297.herokuapp.com/orders?id=${id}`, clickedOrder)
+      .put(`https://next-car-server.onrender.com/orders?id=${id}`, clickedOrder)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           const allOrders = [...manageOrders];
@@ -31,14 +31,16 @@ const ManageAllOrders = () => {
   const handleDeleteOrder = (id) => {
     const confirmation = window.confirm("Do you want to delete order?");
     if (confirmation) {
-      axios.delete(`https://guarded-ridge-49297.herokuapp.com/orders/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          const remainingOrder = manageOrders.filter(
-            (order) => order._id !== id
-          );
-          setManageOrders(remainingOrder);
-        }
-      });
+      axios
+        .delete(`https://next-car-server.onrender.com/orders/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const remainingOrder = manageOrders.filter(
+              (order) => order._id !== id
+            );
+            setManageOrders(remainingOrder);
+          }
+        });
     }
   };
 

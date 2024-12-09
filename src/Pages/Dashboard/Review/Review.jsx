@@ -25,12 +25,14 @@ const Review = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("https://guarded-ridge-49297.herokuapp.com/reviews", review).then((res) => {
-      if (res.data.insertedId) {
-        setSuccessReview(true);
-        e.target.reset();
-      }
-    });
+    axios
+      .post("https://next-car-server.onrender.com/reviews", review)
+      .then((res) => {
+        if (res.data.insertedId) {
+          setSuccessReview(true);
+          e.target.reset();
+        }
+      });
   };
   console.log(review);
   return (

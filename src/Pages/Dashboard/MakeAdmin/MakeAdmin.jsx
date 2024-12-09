@@ -17,16 +17,18 @@ const MakeAdmin = () => {
     e.preventDefault();
 
     const user = { email };
-    axios.put("https://guarded-ridge-49297.herokuapp.com/users/admin", user).then((res) => {
-      if (res.data.modifiedCount > 0) {
-        setSuccessAdmin(true);
-        setError(false);
-        e.target.reset();
-      } else {
-        setError(true);
-        setSuccessAdmin(false);
-      }
-    });
+    axios
+      .put("https://next-car-server.onrender.com/users/admin", user)
+      .then((res) => {
+        if (res.data.modifiedCount > 0) {
+          setSuccessAdmin(true);
+          setError(false);
+          e.target.reset();
+        } else {
+          setError(true);
+          setSuccessAdmin(false);
+        }
+      });
   };
 
   return (

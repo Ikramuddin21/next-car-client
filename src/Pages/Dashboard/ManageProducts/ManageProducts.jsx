@@ -9,7 +9,7 @@ const ManageProducts = () => {
 
   useEffect(() => {
     axios
-      .get("https://guarded-ridge-49297.herokuapp.com/products")
+      .get("https://next-car-server.onrender.com/products")
       .then((res) => setProducts(res.data));
   }, []);
 
@@ -17,14 +17,16 @@ const ManageProducts = () => {
   const handleDeleteOrder = (id) => {
     const confirmation = window.confirm("Do you want to delete product?");
     if (confirmation) {
-      axios.delete(`https://guarded-ridge-49297.herokuapp.com/products/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          const remainingOrder = products.filter(
-            (product) => product._id !== id
-          );
-          setProducts(remainingOrder);
-        }
-      });
+      axios
+        .delete(`https://next-car-server.onrender.com/products/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            const remainingOrder = products.filter(
+              (product) => product._id !== id
+            );
+            setProducts(remainingOrder);
+          }
+        });
     }
   };
 

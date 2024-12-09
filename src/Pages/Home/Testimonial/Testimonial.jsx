@@ -28,7 +28,7 @@ const Testimonial = ({ review }) => {
       >
         <Avatar alt="Remy Sharp" src={img} sx={{ width: 65, height: 65 }} />
         <Box sx={{ ml: 2 }}>
-          <Typography variant="h6" sx={{ color: "#F5831F" }}>
+          <Typography variant="h6" sx={{ color: "#f57709" }}>
             {name}
           </Typography>
           <Typography variant="h6">{address}</Typography>

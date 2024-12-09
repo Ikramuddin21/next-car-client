@@ -29,7 +29,7 @@ const PlaceOrder = () => {
 
   useEffect(() => {
     axios
-      .get(`https://guarded-ridge-49297.herokuapp.com/products/${id}`)
+      .get(`https://next-car-server.onrender.com/products/${id}`)
       .then((res) => setOrder(res.data));
   }, [id]);
 
@@ -47,11 +47,13 @@ const PlaceOrder = () => {
     e.preventDefault();
     const newOrder = { ...userInfo, title, description, price, img };
 
-    axios.post("https://guarded-ridge-49297.herokuapp.com/orders", newOrder).then((res) => {
-      if (res.data.insertedId) {
-        setOrderSuccess(true);
-      }
-    });
+    axios
+      .post("https://next-car-server.onrender.com/orders", newOrder)
+      .then((res) => {
+        if (res.data.insertedId) {
+          setOrderSuccess(true);
+        }
+      });
   };
 
   return (
@@ -65,7 +67,7 @@ const PlaceOrder = () => {
           <img
             style={{ width: "100%", border: "15px solid white" }}
             src={order.img}
-            alt=""
+            alt={order?.title}
           />
         </Grid>
         <Grid item xs={12} md={5} sx={{ textAlign: "center" }}>
